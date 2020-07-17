@@ -6,62 +6,86 @@ namespace StbImageNET
 {
 	public unsafe class StbImage
 	{
-		public static byte* Load(string fileName, out int x, out int y, out Components comp, Components desiredChannels = 0)
+		[DllImport("kernel32.dll")]
+		private static extern void CopyMemory(IntPtr destination, IntPtr source, UIntPtr length);
+		
+		public static byte[] Load(string fileName, out int x, out int y, out Components comp, Components desiredChannels = 0)
 		{
 			int nx;
 			int ny;
 			int ncomp;
 
-			byte* res;
+			byte* data;
 			
 			fixed (byte* ptr = Encoding.UTF8.GetBytes(fileName + '\0'))
 			{
-				res = NativeStbImage.stbi_load(ptr, &nx, &ny, &ncomp, (int)desiredChannels);
+				data = NativeStbImage.stbi_load(ptr, &nx, &ny, &ncomp, (int)desiredChannels);
 			}
 
 			x = nx;
 			y = ny;
 			comp = (Components)ncomp;
+			
+			byte[] res = new byte[x * y * (int)comp];
+
+			fixed (byte* resPtr = res)
+			{
+				CopyMemory((IntPtr)resPtr, (IntPtr)data, (UIntPtr)res.Length);
+			}
 
 			return res;
 		}
 		
-		public static ushort* Load16(string fileName, out int x, out int y, out Components comp, Components desiredChannels = 0)
+		public static ushort[] Load16(string fileName, out int x, out int y, out Components comp, Components desiredChannels = 0)
 		{
 			int nx;
 			int ny;
 			int ncomp;
 
-			ushort* res;
+			ushort* data;
 			
 			fixed (byte* ptr = Encoding.UTF8.GetBytes(fileName + '\0'))
 			{
-				res = NativeStbImage.stbi_load_16(ptr, &nx, &ny, &ncomp, (int)desiredChannels);
+				data = NativeStbImage.stbi_load_16(ptr, &nx, &ny, &ncomp, (int)desiredChannels);
 			}
 
 			x = nx;
 			y = ny;
 			comp = (Components)ncomp;
+			
+			ushort[] res = new ushort[x * y * (int)comp];
+			
+			fixed (ushort* resPtr = res)
+			{
+				CopyMemory((IntPtr)resPtr, (IntPtr)data, (UIntPtr)res.Length);
+			}
 
 			return res;
 		}
 		
-		public static float* Loadf(string fileName, out int x, out int y, out Components comp, Components desiredChannels = 0)
+		public static float[] Loadf(string fileName, out int x, out int y, out Components comp, Components desiredChannels = 0)
 		{
 			int nx;
 			int ny;
 			int ncomp;
 
-			float* res;
+			float* data;
 			
 			fixed (byte* ptr = Encoding.UTF8.GetBytes(fileName + '\0'))
 			{
-				res = NativeStbImage.stbi_loadf(ptr, &nx, &ny, &ncomp, (int)desiredChannels);
+				data = NativeStbImage.stbi_loadf(ptr, &nx, &ny, &ncomp, (int)desiredChannels);
 			}
 
 			x = nx;
 			y = ny;
 			comp = (Components)ncomp;
+			
+			float[] res = new float[x * y * (int)comp];
+			
+			fixed (float* resPtr = res)
+			{
+				CopyMemory((IntPtr)resPtr, (IntPtr)data, (UIntPtr)res.Length);
+			}
 
 			return res;
 		}
