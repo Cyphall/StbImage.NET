@@ -6,9 +6,6 @@ namespace StbImageNET
 {
 	public unsafe class StbImage
 	{
-		[DllImport("kernel32.dll")]
-		private static extern void CopyMemory(IntPtr destination, IntPtr source, UIntPtr length);
-		
 		public static byte[] Load(string fileName, out int x, out int y, out Components comp, Components desiredChannels = 0)
 		{
 			int nx;
@@ -30,7 +27,7 @@ namespace StbImageNET
 
 			fixed (byte* resPtr = res)
 			{
-				CopyMemory((IntPtr)resPtr, (IntPtr)data, (UIntPtr)res.Length);
+				Buffer.MemoryCopy(data, resPtr, res.Length, res.Length);
 			}
 
 			return res;
@@ -57,7 +54,7 @@ namespace StbImageNET
 			
 			fixed (ushort* resPtr = res)
 			{
-				CopyMemory((IntPtr)resPtr, (IntPtr)data, (UIntPtr)res.Length);
+				Buffer.MemoryCopy(data, resPtr, res.Length, res.Length);
 			}
 
 			return res;
@@ -84,7 +81,7 @@ namespace StbImageNET
 			
 			fixed (float* resPtr = res)
 			{
-				CopyMemory((IntPtr)resPtr, (IntPtr)data, (UIntPtr)res.Length);
+				Buffer.MemoryCopy(data, resPtr, res.Length, res.Length);
 			}
 
 			return res;
