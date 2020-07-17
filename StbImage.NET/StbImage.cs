@@ -29,6 +29,8 @@ namespace StbImageNET
 			{
 				Buffer.MemoryCopy(data, resPtr, res.Length, res.Length);
 			}
+			
+			NativeStbImage.stbi_image_free(data);
 
 			return res;
 		}
@@ -56,6 +58,8 @@ namespace StbImageNET
 			{
 				Buffer.MemoryCopy(data, resPtr, res.Length, res.Length);
 			}
+			
+			NativeStbImage.stbi_image_free(data);
 
 			return res;
 		}
@@ -83,6 +87,8 @@ namespace StbImageNET
 			{
 				Buffer.MemoryCopy(data, resPtr, res.Length, res.Length);
 			}
+			
+			NativeStbImage.stbi_image_free(data);
 
 			return res;
 		}
