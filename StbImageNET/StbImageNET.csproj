@@ -4,8 +4,12 @@
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<Description>C# wrapper of the famous stb_image library</Description>
-		<PackageProjectUrl>https://github.com/Cyphall/StbImage.NET</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/Cyphall/StbImage.NET</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/Cyphall/StbImageNET</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Cyphall/StbImageNET</RepositoryUrl>
+		<Version>2.26.0</Version>
+		<PackageId>StbImageNET</PackageId>
+		<Authors>StbImageNET</Authors>
+		<Product>StbImageNET</Product>
 	</PropertyGroup>
 	
 	<ItemGroup>
@@ -15,7 +19,7 @@
 		<None Include="lib/stb_image_x86.dll" Pack="true" PackagePath="runtimes\win-x86\native">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-		<None Include="StbImage.NET.targets" Pack="true" PackagePath="build">
+		<None Include="StbImageNET.targets" Pack="true" PackagePath="build">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
