@@ -4,6 +4,9 @@
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 	</PropertyGroup>
 	
 	<PropertyGroup>
@@ -13,6 +16,7 @@
 		<Description>C# wrapper of the famous stb_image library</Description>
 		<PackageProjectUrl>https://github.com/Cyphall/StbImageNET</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/Cyphall/StbImageNET</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 	
@@ -29,6 +33,10 @@
 			<Pack>true</Pack>
 			<PackagePath>build</PackagePath>
 		</None>
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
 	</ItemGroup>
 
 </Project>
