@@ -1,3 +1,5 @@
+![Nuget](https://img.shields.io/nuget/v/StbImageNET)
+
 # StbImage.NET
 
 This library is a wrapper around the stb_image.h library.<br/>
