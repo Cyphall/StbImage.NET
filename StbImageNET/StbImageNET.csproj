@@ -13,10 +13,7 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<None Include="lib/stb_image_x64.dll" Pack="true" PackagePath="runtimes\win-x64\native">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
-		<None Include="lib/stb_image_x86.dll" Pack="true" PackagePath="runtimes\win-x86\native">
+		<None Include="runtimes\**" Pack="true" PackagePath="runtimes">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 		<None Include="StbImageNET.targets" Pack="true" PackagePath="build">
