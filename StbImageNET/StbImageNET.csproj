@@ -1,16 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<PackageId>StbImageNET</PackageId>
+		<Version>2.26.0</Version>
+		<Authors>Cyphall</Authors>
 		<Description>C# wrapper of the famous stb_image library</Description>
 		<PackageProjectUrl>https://github.com/Cyphall/StbImageNET</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/Cyphall/StbImageNET</RepositoryUrl>
-		<Version>2.26.0</Version>
-		<PackageId>StbImageNET</PackageId>
-		<Authors>StbImageNET</Authors>
-		<Product>StbImageNET</Product>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 	
