@@ -14,8 +14,8 @@ namespace StbImageNET
 				if (name != DLL_NAME)
 					return IntPtr.Zero;
 				return Environment.Is64BitProcess ?
-					NativeLibrary.Load("stb_image_x64.dll", assembly, path) :
-					NativeLibrary.Load("stb_image_x86.dll", assembly, path);
+					NativeLibrary.Load("stb_image_win-x64.dll", assembly, path) :
+					NativeLibrary.Load("stb_image_win-x86.dll", assembly, path);
 			});
 		}
 
