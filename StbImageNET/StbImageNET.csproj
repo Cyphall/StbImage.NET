@@ -11,7 +11,7 @@
 	
 	<PropertyGroup>
 		<PackageId>StbImageNET</PackageId>
-		<Version>2.26.1</Version>
+		<Version>2.26.2</Version>
 		<Authors>Cyphall</Authors>
 		<Description>C# wrapper of the famous stb_image library</Description>
 		<RepositoryUrl>https://github.com/Cyphall/StbImageNET</RepositoryUrl>
