@@ -11,14 +11,21 @@
 		<Authors>StbImageNET</Authors>
 		<Product>StbImageNET</Product>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<None Include="runtimes\**" Pack="true" PackagePath="runtimes">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
 		</None>
-		<None Include="StbImageNET.targets" Pack="true" PackagePath="build">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<None Include="runtimes\**">
+			<Pack>true</Pack>
+			<PackagePath>runtimes</PackagePath>
+		</None>
+		<None Include="StbImageNET.targets">
+			<Pack>true</Pack>
+			<PackagePath>build</PackagePath>
 		</None>
 	</ItemGroup>
 
