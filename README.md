@@ -1,6 +1,6 @@
 [![NuGet](https://img.shields.io/nuget/v/StbImageNET)](https://www.nuget.org/packages/StbImageNET/)
 
-# StbImage.NET
+# StbImageNET
 
 This library is a wrapper around the stb_image.h library.<br/>
 This wrapper is currently only available for Windows 32 & 64 bit.
